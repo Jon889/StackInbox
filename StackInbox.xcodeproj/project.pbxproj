@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABAF7386149EC73F00DE0A2F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABAF7385149EC73F00DE0A2F /* Cocoa.framework */; };
+		ABAF7390149EC73F00DE0A2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABAF738E149EC73F00DE0A2F /* InfoPlist.strings */; };
+		ABAF7392149EC73F00DE0A2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAF7391149EC73F00DE0A2F /* main.m */; };
+		ABAF7396149EC73F00DE0A2F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABAF7394149EC73F00DE0A2F /* Credits.rtf */; };
+		ABAF7399149EC73F00DE0A2F /* SIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAF7398149EC73F00DE0A2F /* SIAppDelegate.m */; };
+		ABAF739C149EC74000DE0A2F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABAF739A149EC74000DE0A2F /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ABAF7381149EC73F00DE0A2F /* StackInbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackInbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAF7385149EC73F00DE0A2F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		ABAF7388149EC73F00DE0A2F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		ABAF7389149EC73F00DE0A2F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ABAF738A149EC73F00DE0A2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ABAF738D149EC73F00DE0A2F /* StackInbox-Info.plist */ = {isa = PBXFileReference; path = "StackInbox-Info.plist"; sourceTree = "<group>"; };
+		ABAF738F149EC73F00DE0A2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ABAF7391149EC73F00DE0A2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABAF7393149EC73F00DE0A2F /* StackInbox-Prefix.pch */ = {isa = PBXFileReference; path = "StackInbox-Prefix.pch"; sourceTree = "<group>"; };
+		ABAF7395149EC73F00DE0A2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		ABAF7397149EC73F00DE0A2F /* SIAppDelegate.h */ = {isa = PBXFileReference; path = SIAppDelegate.h; sourceTree = "<group>"; };
+		ABAF7398149EC73F00DE0A2F /* SIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIAppDelegate.m; sourceTree = "<group>"; };
+		ABAF739B149EC74000DE0A2F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABAF737E149EC73F00DE0A2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABAF7386149EC73F00DE0A2F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABAF7376149EC73F00DE0A2F = {
+			isa = PBXGroup;
+			children = (
+				ABAF738B149EC73F00DE0A2F /* StackInbox */,
+				ABAF7384149EC73F00DE0A2F /* Frameworks */,
+				ABAF7382149EC73F00DE0A2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABAF7382149EC73F00DE0A2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABAF7381149EC73F00DE0A2F /* StackInbox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABAF7384149EC73F00DE0A2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABAF7385149EC73F00DE0A2F /* Cocoa.framework */,
+				ABAF7387149EC73F00DE0A2F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABAF7387149EC73F00DE0A2F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABAF7388149EC73F00DE0A2F /* AppKit.framework */,
+				ABAF7389149EC73F00DE0A2F /* CoreData.framework */,
+				ABAF738A149EC73F00DE0A2F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		ABAF738B149EC73F00DE0A2F /* StackInbox */ = {
+			isa = PBXGroup;
+			children = (
+				ABAF7397149EC73F00DE0A2F /* SIAppDelegate.h */,
+				ABAF7398149EC73F00DE0A2F /* SIAppDelegate.m */,
+				ABAF739A149EC74000DE0A2F /* MainMenu.xib */,
+				ABAF738C149EC73F00DE0A2F /* Supporting Files */,
+			);
+			path = StackInbox;
+			sourceTree = "<group>";
+		};
+		ABAF738C149EC73F00DE0A2F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABAF738D149EC73F00DE0A2F /* StackInbox-Info.plist */,
+				ABAF738E149EC73F00DE0A2F /* InfoPlist.strings */,
+				ABAF7391149EC73F00DE0A2F /* main.m */,
+				ABAF7393149EC73F00DE0A2F /* StackInbox-Prefix.pch */,
+				ABAF7394149EC73F00DE0A2F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABAF7380149EC73F00DE0A2F /* StackInbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABAF739F149EC74000DE0A2F /* Build configuration list for PBXNativeTarget "StackInbox" */;
+			buildPhases = (
+				ABAF737D149EC73F00DE0A2F /* Sources */,
+				ABAF737E149EC73F00DE0A2F /* Frameworks */,
+				ABAF737F149EC73F00DE0A2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StackInbox;
+			productName = StackInbox;
+			productReference = ABAF7381149EC73F00DE0A2F /* StackInbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABAF7378149EC73F00DE0A2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = ABAF737B149EC73F00DE0A2F /* Build configuration list for PBXProject "StackInbox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ABAF7376149EC73F00DE0A2F;
+			productRefGroup = ABAF7382149EC73F00DE0A2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABAF7380149EC73F00DE0A2F /* StackInbox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABAF737F149EC73F00DE0A2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABAF7390149EC73F00DE0A2F /* InfoPlist.strings in Resources */,
+				ABAF7396149EC73F00DE0A2F /* Credits.rtf in Resources */,
+				ABAF739C149EC74000DE0A2F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABAF737D149EC73F00DE0A2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABAF7392149EC73F00DE0A2F /* main.m in Sources */,
+				ABAF7399149EC73F00DE0A2F /* SIAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ABAF738E149EC73F00DE0A2F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABAF738F149EC73F00DE0A2F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ABAF7394149EC73F00DE0A2F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABAF7395149EC73F00DE0A2F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		ABAF739A149EC74000DE0A2F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABAF739B149EC74000DE0A2F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABAF739D149EC74000DE0A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ABAF739E149EC74000DE0A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		ABAF73A0149EC74000DE0A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StackInbox/StackInbox-Prefix.pch";
+				INFOPLIST_FILE = "StackInbox/StackInbox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ABAF73A1149EC74000DE0A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StackInbox/StackInbox-Prefix.pch";
+				INFOPLIST_FILE = "StackInbox/StackInbox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABAF737B149EC73F00DE0A2F /* Build configuration list for PBXProject "StackInbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABAF739D149EC74000DE0A2F /* Debug */,
+				ABAF739E149EC74000DE0A2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABAF739F149EC74000DE0A2F /* Build configuration list for PBXNativeTarget "StackInbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABAF73A0149EC74000DE0A2F /* Debug */,
+				ABAF73A1149EC74000DE0A2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABAF7378149EC73F00DE0A2F /* Project object */;
+}
