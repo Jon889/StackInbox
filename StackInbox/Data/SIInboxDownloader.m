@@ -8,20 +8,14 @@
 
 #import "SIInboxDownloader.h"
 #import "ASIHTTPRequest.h"
-//#import "GTMHTTPFetcher.h"
 #import "JSONKit.h"
 #import "SIInboxModel.h"
 
 @implementation SIInboxDownloader
 @synthesize json, delegate, lastDownload;
--(id)init {
-    if (self = [super init]) {
 
-    }
-    return self;
-}
 -(void)startDownloadWithAccessToken:(NSString *)accessToken {
-    NSString *key = @"PMk2uCNoN*jdo8tdz2nwCg((";
+    NSString *key = @"KEY GOES HERE";
     NSString *filter = @")w_hKtV2*GAyeu2mT7_";
     if (!accessToken || [accessToken length] == 0) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SINeedsAccessToken" object:self];
