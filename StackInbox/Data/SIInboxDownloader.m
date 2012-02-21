@@ -15,7 +15,8 @@
 @synthesize json, delegate, lastDownload;
 
 -(void)startDownloadWithAccessToken:(NSString *)accessToken {
-    NSString *key = @"KEY GOES HERE";
+#warning This is StackInbox's key, if you use this code for another app you need to use your own key
+    NSString *key = @"PMk2uCNoN*jdo8tdz2nwCg((";
     NSString *filter = @")w_hKtV2*GAyeu2mT7_";
     if (!accessToken || [accessToken length] == 0) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SINeedsAccessToken" object:self];
