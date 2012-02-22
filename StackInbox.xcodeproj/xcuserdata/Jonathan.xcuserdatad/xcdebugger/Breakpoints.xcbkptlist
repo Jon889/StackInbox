@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "264"
-         endingLineNumber = "264"
+         startingLineNumber = "336"
+         endingLineNumber = "336"
          landmarkName = "-finishedDownloadingJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "245"
-         endingLineNumber = "245"
+         startingLineNumber = "317"
+         endingLineNumber = "317"
          landmarkName = "-finishedDownloadingJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
+         startingLineNumber = "296"
+         endingLineNumber = "296"
          landmarkName = "-finishedDownloadingJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "238"
-         endingLineNumber = "238"
+         startingLineNumber = "310"
+         endingLineNumber = "310"
          landmarkName = "-finishedDownloadingJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -93,11 +93,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "227"
-         endingLineNumber = "227"
+         startingLineNumber = "299"
+         endingLineNumber = "299"
          landmarkName = "-finishedDownloadingJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -107,11 +107,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "260"
-         endingLineNumber = "260"
+         startingLineNumber = "332"
+         endingLineNumber = "332"
          landmarkName = "-finishedDownloadingJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -149,11 +149,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "304"
-         endingLineNumber = "304"
+         startingLineNumber = "376"
+         endingLineNumber = "376"
          landmarkName = "-login:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -205,39 +205,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
+         timestampString = "351630949.845124"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
-         landmarkName = "-applicationDidFinishLaunching:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
-         landmarkName = "-applicationDidFinishLaunching:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "StackInbox/SIAppDelegate.m"
-         timestampString = "351463944.763362"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "162"
-         endingLineNumber = "162"
+         startingLineNumber = "230"
+         endingLineNumber = "230"
          landmarkName = "-growlNotificationWasClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -253,6 +225,20 @@
          startingLineNumber = "44"
          endingLineNumber = "44"
          landmarkName = "-login:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "StackInbox/SIAppDelegate.m"
+         timestampString = "351630949.845124"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
+         landmarkName = "-menuItemClicked"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

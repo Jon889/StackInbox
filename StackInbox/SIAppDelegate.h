@@ -33,6 +33,8 @@
 @property (nonatomic, retain) SIAuthController *authController;
 
 @property (nonatomic, retain) NSTimer *timer;
+
+@property (nonatomic, retain) NSStatusItem *statusItem;
 -(void)switchToViewController:(SIViewController *)viewController;
 
 -(IBAction)logout:(id)sender;

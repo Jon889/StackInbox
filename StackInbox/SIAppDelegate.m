@@ -17,6 +17,17 @@
 
 #define  MINUTES * 60
 
+
+@interface SIAppDelegate ()
+-(void)setupViewControllers;
+-(void)setupDataControllers;
+-(void)startTimer;
+-(void)stopTimer;
+-(void)showBarItem;
+-(void)hideBarItem;
+-(void)setIndicatorsRead;
+@end
+
 @implementation SIAppDelegate
 
 @synthesize window = _window;
@@ -34,7 +45,12 @@
 
 @synthesize timer;
 
+@synthesize statusItem;
+
+#pragma mark - App Lifecycle
+
 - (void)dealloc {
+    [statusItem release];
     [timer release];
     [loginViewController release];
     [downloadingViewController release];
@@ -45,52 +61,21 @@
     [super dealloc];
 }
 
--(void)setupViewControllers {
-    SILoginViewController *loginVC = [[SILoginViewController alloc] init];
-    [loginVC setDelegate:self];
-    [self setLoginViewController:loginVC];
-    [loginVC release];
-    
-    SINoInternetViewController *noInternetVC = [[SINoInternetViewController alloc] init];
-    [self setNoInternetViewController:noInternetVC];
-    [noInternetVC release];
-    
-    SIDownloadingViewController *downloadingVC = [[SIDownloadingViewController alloc] init];
-    [self setDownloadingViewController:downloadingVC];
-    [downloadingVC release];
-    
-    SIInboxListViewController *inboxVC = [[SIInboxListViewController alloc] init];
-    [self setInboxViewController:inboxVC];
-    [inboxVC release];
-}
--(void)setupDataController {
-    SIInboxDownloader *inboxDownloader = [[SIInboxDownloader alloc] init];
-    [inboxDownloader setDelegate:self];
-    [self setDownloader:inboxDownloader];
-    [inboxDownloader release];
-    
-    SIAuthController *authCont = [[SIAuthController alloc] init];
-    [authController setDelegate:self];
-    [self setAuthController:authCont];
-    [authCont release];
-}
--(void)startTimer {
-    [self.timer invalidate];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 MINUTES target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
-    [self.timer fire];
-}
--(void)stopTimer {
-    [self.timer invalidate];
-    self.timer = nil;
-}
--(void)timerFire {
-    [self.downloader startDownloadWithAccessToken:self.authController.accessToken];
-}
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self setupViewControllers];
-    [self setupDataController];
+    [self setupDataControllers];
     [self startTimer];
+    
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"SIShowStatusItem" options:0 context:nil];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SIShowStatusItem"]) {
+        [self showBarItem];
+    }
+    
     [GrowlApplicationBridge setGrowlDelegate:self];
+    [[NSNotificationCenter defaultCenter] addObserverForName:PXListViewSelectionDidChange object:nil queue:nil usingBlock:^(NSNotification *note) {
+        [self setIndicatorsRead];
+    }];
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SIStartAuth" object:nil queue:nil usingBlock:^(NSNotification *note) {
         [self stopTimer];
         if (!self.inboxViewController.itemsToList || [self.inboxViewController.itemsToList count] == 0) {
@@ -105,7 +90,7 @@
             [self.window.titlebarRefreshSpinner setHidden:NO];
             [self.window.titlebarRefreshSpinner startAnimation:nil];
         }
-
+        
         if (!self.inboxViewController.itemsToList || [self.inboxViewController.itemsToList count] == 0) {
             [self switchToViewController:self.downloadingViewController];
         }
@@ -124,10 +109,12 @@
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
-    [[NSApp dockTile] setBadgeLabel:nil];
+    [self setIndicatorsRead];
     [self.window makeKeyAndOrderFront:nil];
     return YES;
 }
+
+#pragma mark - Controllers
 
 -(void)switchToViewController:(SIViewController *)viewController {
     if (self.currentViewController == viewController) {
@@ -148,6 +135,87 @@
     [self.window.contentView addSubview:viewController.view];
     [viewController setIsCurrent:YES];
 }
+-(void)setupViewControllers {
+    SILoginViewController *loginVC = [[SILoginViewController alloc] init];
+    [loginVC setDelegate:self];
+    [self setLoginViewController:loginVC];
+    [loginVC release];
+    
+    SINoInternetViewController *noInternetVC = [[SINoInternetViewController alloc] init];
+    [self setNoInternetViewController:noInternetVC];
+    [noInternetVC release];
+    
+    SIDownloadingViewController *downloadingVC = [[SIDownloadingViewController alloc] init];
+    [self setDownloadingViewController:downloadingVC];
+    [downloadingVC release];
+    
+    SIInboxListViewController *inboxVC = [[SIInboxListViewController alloc] init];
+    [self setInboxViewController:inboxVC];
+    [inboxVC release];
+}
+-(void)setupDataControllers {
+    SIInboxDownloader *inboxDownloader = [[SIInboxDownloader alloc] init];
+    [inboxDownloader setDelegate:self];
+    [self setDownloader:inboxDownloader];
+    [inboxDownloader release];
+    
+    SIAuthController *authCont = [[SIAuthController alloc] init];
+    [authController setDelegate:self];
+    [self setAuthController:authCont];
+    [authCont release];
+}
+#pragma mark - Timer
+-(void)startTimer {
+    [self.timer invalidate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 MINUTES target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
+    [self.timer fire];
+}
+-(void)stopTimer {
+    [self.timer invalidate];
+    self.timer = nil;
+}
+-(void)timerFire {
+    [self.downloader startDownloadWithAccessToken:self.authController.accessToken];
+}
+
+#pragma mark - MenuItem
+
+-(void)menuItemClicked {
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    [self.window makeKeyAndOrderFront:nil];
+}
+-(void)setIndicatorsRead {
+    [[NSApp dockTile] setBadgeLabel:nil];
+    NSImage *icon = [NSImage imageNamed:@"StackInbox"];
+    [icon setSize:NSMakeSize([[NSStatusBar systemStatusBar] thickness]-4, [[NSStatusBar systemStatusBar] thickness] -4 )];
+    [self.statusItem setImage:icon];
+}
+-(void)showBarItem {
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:[[NSStatusBar systemStatusBar] thickness]];
+    NSImage *icon = [NSImage imageNamed:@"StackInboxRead"];
+    if ([[[NSApp dockTile] badgeLabel] isEqualToString:@"★"]) {
+        icon = [NSImage imageNamed:@"StackInboxNew"];
+    }
+    [icon setSize:NSMakeSize([[NSStatusBar systemStatusBar] thickness]-4, [[NSStatusBar systemStatusBar] thickness] -4 )];
+    [statusItem setImage:icon];
+    [statusItem setHighlightMode:YES];
+    [statusItem setTarget:self];
+    [statusItem setAction:@selector(menuItemClicked)];
+    
+}
+-(void)hideBarItem {
+    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"SIShowStatusItem"]) {
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SIShowStatusItem"]) {
+            [self showBarItem];
+        } else {
+            [self hideBarItem];
+        }
+    }
+}
+
 
 #pragma mark - Delegation 
 #pragma mark LoginViewController
@@ -165,10 +233,11 @@
     
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:link]];
     if (count == 1) {
-        [[NSApp dockTile] setBadgeLabel:nil];
+        [self setIndicatorsRead];
     }
     
 }
+
 
 
 #pragma mark Auth
@@ -219,6 +288,9 @@
                                        isSticky:NO
                                    clickContext:dict];
     }
+    NSImage *newImage = [NSImage imageNamed:@"StackInboxNew.png"];
+    [newImage setSize:NSMakeSize([[NSStatusBar systemStatusBar] thickness] -4, [[NSStatusBar systemStatusBar] thickness] -4)];
+    [self.statusItem setImage:newImage];
 }
 
 -(void)finishedDownloadingJSON:(NSDictionary *)jsonObject {
