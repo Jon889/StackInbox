@@ -101,8 +101,8 @@
 		AB7573E914F5685C002311BF /* StackInboxNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StackInboxNew.png; sourceTree = "<group>"; };
 		AB7573EC14F57638002311BF /* StackInboxRead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StackInboxRead.png; sourceTree = "<group>"; };
 		AB81FD3C14AFFBBE00A393FD /* StackInbox.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = StackInbox.icns; sourceTree = SOURCE_ROOT; };
-		AB81FD3E14B01EDC00A393FD /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../../Downloads/JSONKit.m; sourceTree = "<group>"; };
-		AB81FD4014B01EE100A393FD /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../../Downloads/JSONKit.h; sourceTree = "<group>"; };
+		AB81FD3E14B01EDC00A393FD /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = External/JSONKit.m; sourceTree = "<group>"; };
+		AB81FD4014B01EE100A393FD /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = External/JSONKit.h; sourceTree = "<group>"; };
 		AB81FD4414B0222E00A393FD /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "External/GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		AB81FD4514B0223300A393FD /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "External/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		AB81FD4714B025B600A393FD /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcher.h; path = External/GTMHTTPFetcher.h; sourceTree = "<group>"; };
