@@ -365,7 +365,7 @@
 }
 
 -(IBAction)markAllRead:(id)sender {
-    [[NSApp dockTile] setBadgeLabel:nil];
+    [self setIndicatorsRead];
     [self.inboxViewController.itemsToList makeObjectsPerformSelector:@selector(setRead)];
     [self.inboxViewController.listView reloadData];
 }
